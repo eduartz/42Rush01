@@ -30,17 +30,20 @@ bool ft_filter(int x, int y)
 //logica del programa
 void ft_logic(int x, int y)
 {
-	if(ft_filter(x, y))
-	{
-		printf("Datos validos!");
-	}else{
-		printf("Datos ingresados no válidos");
-	}
+	//le decimos que si es falso termine la ejecucion y no haga nada.
+	if(!ft_filter(x, y))
+		printf("Error...");
+		return ;
+
+	int frame = 0;
+
+	printf("genial...");
+
 }
 
 //ejecucion del programa
 int main ()
 {
-	ft_logic(2, 1);
+	ft_logic(2, ' ');
 	return (0);
 }
