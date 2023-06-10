@@ -1,6 +1,7 @@
-#include <stdio.h>
-#include <stdbool.h>
-#include <unistd.h>
+#include <unistd.h>		//para usar el write
+#include <stdio.h>		//para usar el printf
+#include <stdbool.h>	//para usar los booleanos true / false
+#include <stdlib.h> 	//para la function exit
 
 //solo se usara para imprimir las posiciones despues de hacer la logica
 void ft_print(char c)
@@ -9,13 +10,11 @@ void ft_print(char c)
 }
 
 //valida si los datos ingresados existen y si son mayores a 0.
-bool ft_filter(int x, int y)
+void ft_filter(int x, int y)
 {
-	if((x != ' ' && y != ' ') && (x > 0 && y > 0))
-	{
-		return true;
-	}else{
-		return false;
+	if((x == ' ' || y == ' ') || (x < 0 || y < 0)){
+		printf("error...");
+		exit(0);
 	}
 }
 
@@ -27,23 +26,30 @@ bool ft_filter(int x, int y)
 	de tal modo como se hizo con ft_filter.
 */
 
+void ft_sud_logic(int x)
+{
+
+}
+
 //logica del programa
 void ft_logic(int x, int y)
 {
 	//le decimos que si es falso termine la ejecucion y no haga nada.
-	if(!ft_filter(x, y))
-		printf("Error...");
-		return ;
+	ft_filter(x, y);
 
 	int frame = 0;
-
-	printf("genial...");
+	while (frame <= x)
+	{
+		ft_print('X');
+		frame++;
+	}
+	
 
 }
 
 //ejecucion del programa
 int main ()
 {
-	ft_logic(2, ' ');
+	ft_logic(4, 1);
 	return (0);
 }
