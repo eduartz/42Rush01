@@ -1,5 +1,6 @@
-#include <unistd.h>
+#include <stdio.h>
 #include <stdbool.h>
+#include <unistd.h>
 
 void ft_print(char c)
 {
@@ -20,14 +21,14 @@ void ft_logic(int x, int y)
 {
 	if(ft_filter(x, y))
 	{
-		ft_print('O');
+		printf("Datos validos!");
 	}else{
-		ft_print('X');
+		printf("Datos ingresados no válidos");
 	}
 }
 
 int main ()
 {
-	ft_logic(2, ' ');
+	ft_logic(2, 1);
 	return (0);
 }
