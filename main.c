@@ -26,7 +26,7 @@ void ft_filter(int x, int y)
 	de tal modo como se hizo con ft_filter.
 */
 
-void ft_sud_logic(int x)
+void ft_print_frame(int x, int y)
 {
 
 }
@@ -34,13 +34,18 @@ void ft_sud_logic(int x)
 //logica del programa
 void ft_logic(int x, int y)
 {
-	//le decimos que si es falso termine la ejecucion y no haga nada.
+	//le damos los parametros para que filter lo evalue y termine el programa si es el caso.
 	ft_filter(x, y);
 
 	int frame = 0;
+	int frameX = x;
 	while (frame <= x)
 	{
-		ft_print('X');
+		if(frame == 0)
+			ft_print(' ');
+		else
+			printf("%d", frameX--);
+
 		frame++;
 	}
 	
